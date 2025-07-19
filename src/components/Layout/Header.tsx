@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <div className="p-2 bg-blue-600 rounded-lg">
               <Pill className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">İlaç Hatırlatıcısı</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">İlaç Hatırlatıcısı</span>
           </Link>
 
           {/* Navigation */}
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive('/dashboard') 
                   ? 'text-blue-600 bg-blue-50' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-700'
               }`}
             >
               <Home className="h-4 w-4" />
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive('/medicines') 
                   ? 'text-blue-600 bg-blue-50' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-700'
               }`}
             >
               <Pill className="h-4 w-4" />
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors relative ${
                 isActive('/notifications') 
                   ? 'text-blue-600 bg-blue-50' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-700'
               }`}
             >
               <Bell className="h-4 w-4" />
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
                 className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   isActive('/admin') 
                     ? 'text-purple-600 bg-purple-50' 
-                    : 'text-gray-700 hover:text-purple-600 hover:bg-gray-50'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
               >
                 <Settings className="h-4 w-4" />
@@ -92,19 +92,19 @@ const Header: React.FC = () => {
           {/* User menu */}
           <div className="flex items-center space-x-4">
             <div className="relative group">
-              <button className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 transition-colors">
+              <button className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                 <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                   <User className="h-4 w-4 text-white" />
                 </div>
-                <span className="hidden md:block text-sm font-medium text-gray-700">{user.username}</span>
+                <span className="hidden md:block text-sm font-medium text-gray-700 dark:text-gray-300">{user.username}</span>
               </button>
               
               {/* Dropdown menu */}
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-1">
                   <Link 
                     to="/profile"
-                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     <Settings className="h-4 w-4" />
                     <span>Profil</span>
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
                   {user.isAdmin && (
                     <Link 
                       to="/admin"
-                      className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <Settings className="h-4 w-4" />
                       <span>Yönetici Paneli</span>
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
                   )}
                   <button 
                     onClick={handleLogout}
-                    className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     <LogOut className="h-4 w-4" />
                     <span>Çıkış Yap</span>

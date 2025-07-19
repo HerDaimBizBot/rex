@@ -71,23 +71,23 @@ const Profile: React.FC = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 lg:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 lg:p-8 transition-colors">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Profil Ayarları</h1>
-          <p className="text-gray-600">Hesap tercihlerinizi ve ayarlarınızı yönetin</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Profil Ayarları</h1>
+          <p className="text-gray-600 dark:text-gray-400">Hesap tercihlerinizi ve ayarlarınızı yönetin</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Profile Card */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <User className="h-10 w-10 text-white" />
               </div>
-              <h2 className="text-xl font-semibold text-gray-900 mb-1">{user.username}</h2>
-              <p className="text-gray-600 mb-4">{user.email || 'E-posta ayarlanmadı'}</p>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{user.username}</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">{user.email || 'E-posta ayarlanmadı'}</p>
               
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
@@ -106,10 +106,10 @@ const Profile: React.FC = () => {
           {/* Settings */}
           <div className="lg:col-span-2 space-y-6">
             {/* Profile Information */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Profil Bilgileri</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Profil Bilgileri</h3>
                   {!isEditing ? (
                     <button
                       onClick={() => setIsEditing(true)}
@@ -132,26 +132,26 @@ const Profile: React.FC = () => {
                 {isEditing ? (
                   <form onSubmit={handleProfileUpdate} className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Kullanıcı Adı
                       </label>
                       <input
                         type="text"
                         value={formData.username}
                         onChange={(e) => setFormData(prev => ({ ...prev, username: e.target.value }))}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         E-posta
                       </label>
                       <input
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder="E-posta adresinizi girin"
                       />
                     </div>
@@ -167,17 +167,17 @@ const Profile: React.FC = () => {
                 ) : (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Kullanıcı Adı
                       </label>
-                      <p className="text-gray-900">{user.username}</p>
+                      <p className="text-gray-900 dark:text-white">{user.username}</p>
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         E-posta
                       </label>
-                      <p className="text-gray-900">{user.email || 'Ayarlanmadı'}</p>
+                      <p className="text-gray-900 dark:text-white">{user.email || 'Ayarlanmadı'}</p>
                     </div>
                   </div>
                 )}
@@ -185,16 +185,16 @@ const Profile: React.FC = () => {
             </div>
 
             {/* Theme Settings */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div className="p-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Görünüm</h3>
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Görünüm</h3>
               </div>
               
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-gray-900">Tema</h4>
-                    <p className="text-sm text-gray-600">Tercih ettiğiniz temayı seçin</p>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Tema</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Tercih ettiğiniz temayı seçin</p>
                   </div>
                   
                   <button
@@ -215,21 +215,21 @@ const Profile: React.FC = () => {
                 <div className="mt-4 flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
                     <Sun className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Açık</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Açık</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Moon className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Koyu</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Koyu</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Security Settings */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Güvenlik</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Güvenlik</h3>
                   {!showPasswordForm && (
                     <button
                       onClick={() => setShowPasswordForm(true)}
@@ -245,7 +245,7 @@ const Profile: React.FC = () => {
                 {showPasswordForm ? (
                   <form onSubmit={handlePasswordChange} className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Mevcut Şifre
                       </label>
                       <div className="relative">
@@ -253,7 +253,7 @@ const Profile: React.FC = () => {
                           type={showCurrentPassword ? 'text' : 'password'}
                           value={passwordData.currentPassword}
                           onChange={(e) => setPasswordData(prev => ({ ...prev, currentPassword: e.target.value }))}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white pr-10"
                           required
                         />
                         <button
@@ -267,7 +267,7 @@ const Profile: React.FC = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Yeni Şifre
                       </label>
                       <div className="relative">
@@ -275,7 +275,7 @@ const Profile: React.FC = () => {
                           type={showNewPassword ? 'text' : 'password'}
                           value={passwordData.newPassword}
                           onChange={(e) => setPasswordData(prev => ({ ...prev, newPassword: e.target.value }))}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white pr-10"
                           required
                         />
                         <button
@@ -289,14 +289,14 @@ const Profile: React.FC = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Yeni Şifre Tekrarı
                       </label>
                       <input
                         type="password"
                         value={passwordData.confirmPassword}
                         onChange={(e) => setPasswordData(prev => ({ ...prev, confirmPassword: e.target.value }))}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         required
                       />
                     </div>
@@ -312,7 +312,7 @@ const Profile: React.FC = () => {
                             confirmPassword: ''
                           });
                         }}
-                        className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                        className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                       >
                         İptal
                       </button>
@@ -327,8 +327,8 @@ const Profile: React.FC = () => {
                   </form>
                 ) : (
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Şifre</h4>
-                    <p className="text-sm text-gray-600">Son güncelleme: Hiç</p>
+                    <h4 className="font-medium text-gray-900 dark:text-white mb-1">Şifre</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Son güncelleme: Hiç</p>
                   </div>
                 )}
               </div>

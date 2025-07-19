@@ -95,12 +95,12 @@ const Dashboard: React.FC = () => {
   const completionRate = totalToday > 0 ? Math.round((completedToday / totalToday) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 lg:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 lg:p-8 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Ana Sayfa</h1>
-          <p className="text-gray-600">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Ana Sayfa</h1>
+          <p className="text-gray-600 dark:text-gray-400">
             Bugün {new Date().toLocaleDateString('tr-TR', { 
               weekday: 'long', 
               year: 'numeric', 
@@ -112,11 +112,11 @@ const Dashboard: React.FC = () => {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Bugünkü İlerleme</p>
-                <p className="text-2xl font-bold text-gray-900">{completionRate}%</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Bugünkü İlerleme</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">{completionRate}%</p>
               </div>
               <div className="p-3 bg-blue-100 rounded-lg">
                 <Calendar className="h-6 w-6 text-blue-600" />
@@ -124,10 +124,10 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Tamamlanan</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Tamamlanan</p>
                 <p className="text-2xl font-bold text-green-600">{completedToday}</p>
               </div>
               <div className="p-3 bg-green-100 rounded-lg">
@@ -136,10 +136,10 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Bugün Toplam</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Bugün Toplam</p>
                 <p className="text-2xl font-bold text-blue-600">{totalToday}</p>
               </div>
               <div className="p-3 bg-blue-100 rounded-lg">
@@ -148,10 +148,10 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Aktif İlaçlar</p>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Aktif İlaçlar</p>
                 <p className="text-2xl font-bold text-purple-600">{todaysMedicines.length}</p>
               </div>
               <div className="p-3 bg-purple-100 rounded-lg">
@@ -164,10 +164,10 @@ const Dashboard: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Today's Schedule */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-gray-900">Bugünkü Program</h2>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Bugünkü Program</h2>
                   <Link 
                     to="/medicines"
                     className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
@@ -181,8 +181,8 @@ const Dashboard: React.FC = () => {
                 {todaysSchedule.length === 0 ? (
                   <div className="text-center py-12">
                     <Pill className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">Programlanmış ilaç yok</h3>
-                    <p className="text-gray-600 mb-4">Takibe başlamak için ilk ilacınızı ekleyin</p>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Programlanmış ilaç yok</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">Takibe başlamak için ilk ilacınızı ekleyin</p>
                     <Link 
                       to="/medicines"
                       className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
@@ -211,14 +211,14 @@ const Dashboard: React.FC = () => {
                               style={{ backgroundColor: item.color }}
                             />
                             <div>
-                              <h3 className="font-semibold text-gray-900">{item.name}</h3>
-                              <p className="text-sm text-gray-600">{item.dosage}</p>
+                              <h3 className="font-semibold text-gray-900 dark:text-white">{item.name}</h3>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">{item.dosage}</p>
                             </div>
                           </div>
                           
                           <div className="flex items-center space-x-4">
                             <div className="text-right">
-                              <p className="font-medium text-gray-900">{item.scheduleTime}</p>
+                              <p className="font-medium text-gray-900 dark:text-white">{item.scheduleTime}</p>
                               <p className={`text-sm ${
                                 item.status === 'taken' ? 'text-green-600' :
                                 item.status === 'missed' ? 'text-red-600' :
@@ -260,16 +260,16 @@ const Dashboard: React.FC = () => {
 
           {/* Upcoming Medicines */}
           <div>
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-lg font-semibold text-gray-900">Yaklaşan</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Yaklaşan</h2>
               </div>
               
               <div className="p-6">
                 {upcomingMedicines.length === 0 ? (
                   <div className="text-center py-8">
                     <Clock className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-600">Yaklaşan ilaç yok</p>
+                    <p className="text-gray-600 dark:text-gray-400">Yaklaşan ilaç yok</p>
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -283,8 +283,8 @@ const Dashboard: React.FC = () => {
                           style={{ backgroundColor: medicine.color }}
                         />
                         <div className="flex-1">
-                          <p className="font-medium text-gray-900">{medicine.name}</p>
-                          <p className="text-sm text-gray-600">{medicine.scheduleTime}</p>
+                          <p className="font-medium text-gray-900 dark:text-white">{medicine.name}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">{medicine.scheduleTime}</p>
                         </div>
                         <Clock className="h-4 w-4 text-blue-600" />
                       </div>
@@ -295,26 +295,26 @@ const Dashboard: React.FC = () => {
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 mt-6">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-lg font-semibold text-gray-900">Hızlı İşlemler</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mt-6">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Hızlı İşlemler</h2>
               </div>
               
               <div className="p-6 space-y-4">
                 <Link 
                   to="/medicines"
-                  className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                 >
                   <Plus className="h-5 w-5 text-blue-600" />
-                  <span className="font-medium text-gray-900">İlaç Ekle</span>
+                  <span className="font-medium text-gray-900 dark:text-white">İlaç Ekle</span>
                 </Link>
                 
                 <Link 
                   to="/notifications"
-                  className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                 >
                   <AlertCircle className="h-5 w-5 text-orange-600" />
-                  <span className="font-medium text-gray-900">Bildirimleri Görüntüle</span>
+                  <span className="font-medium text-gray-900 dark:text-white">Bildirimleri Görüntüle</span>
                 </Link>
               </div>
             </div>

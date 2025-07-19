@@ -131,6 +131,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setUser(updatedUser);
       localStorage.setItem('medireminder_user', JSON.stringify(updatedUser));
       
+      // Apply theme to document
+      if (updates.theme) {
+        applyTheme(updates.theme);
+      }
+      
       // Update in users array too
       const users = JSON.parse(localStorage.getItem('medireminder_users') || '[]');
       const userIndex = users.findIndex((u: any) => u.id === user.id);
@@ -140,6 +145,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       }
     }
   };
+
+  const applyTheme = (theme: 'light' | 'dark') => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  useEffect(() => {
+    // Apply theme on initial load
+    if (user?.theme) {
+      applyTheme(user.theme);
+    }
+  }, [user?.theme]);
 
   const value = {
     user,
