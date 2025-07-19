@@ -103,24 +103,24 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 lg:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 lg:p-8 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Yönetici Paneli</h1>
-          <p className="text-gray-600">Kullanıcıları ve reklamları yönetin</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 transition-colors">Yönetici Paneli</h1>
+          <p className="text-gray-600 dark:text-gray-400 transition-colors">Kullanıcıları ve reklamları yönetin</p>
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 mb-8">
-          <div className="border-b border-gray-200">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mb-8 transition-colors">
+          <div className="border-b border-gray-200 dark:border-gray-700">
             <nav className="flex space-x-8 px-6">
               <button
                 onClick={() => setActiveTab('users')}
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'users'
                     ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               >
                 <div className="flex items-center space-x-2">
@@ -134,7 +134,7 @@ const Admin: React.FC = () => {
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   activeTab === 'ads'
                     ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               >
                 <div className="flex items-center space-x-2">
@@ -149,70 +149,70 @@ const Admin: React.FC = () => {
             {activeTab === 'users' ? (
               <div>
                 <div className="mb-6">
-                    <h2 className="text-lg font-semibold text-gray-900 mb-2">Kullanıcı Yönetimi</h2>
-                    <p className="text-gray-600">Kayıtlı kullanıcıları görüntüleyin ve yönetin</p>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors">Kullanıcı Yönetimi</h2>
+                    <p className="text-gray-600 dark:text-gray-400 transition-colors">Kayıtlı kullanıcıları görüntüleyin ve yönetin</p>
                 </div>
 
                 {users.length === 0 ? (
                   <div className="text-center py-12">
                     <Users className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">Kullanıcı bulunamadı</h3>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2 transition-colors">Kullanıcı bulunamadı</h3>
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
+                      <thead className="bg-gray-50 dark:bg-gray-700">
                         <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider transition-colors">
                             Kullanıcı
                           </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider transition-colors">
                             E-posta
                           </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider transition-colors">
                             Rol
                           </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider transition-colors">
                             Oluşturulma
                           </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider transition-colors">
                             İşlemler
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
+                      <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700 transition-colors">
                         {users.map((u) => (
-                          <tr key={u.id} className="hover:bg-gray-50">
+                          <tr key={u.id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="flex items-center">
                                 <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
                                   <span className="text-white font-medium">{u.username[0].toUpperCase()}</span>
                                 </div>
                                 <div className="ml-4">
-                                  <div className="text-sm font-medium text-gray-900">{u.username}</div>
+                                  <div className="text-sm font-medium text-gray-900 dark:text-white transition-colors">{u.username}</div>
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white transition-colors">
                               {u.email || 'Ayarlanmadı'}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                                 u.isAdmin 
-                                  ? 'bg-purple-100 text-purple-800' 
-                                  : 'bg-gray-100 text-gray-800'
+                                  ? 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200' 
+                                  : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300'
                               }`}>
                                 {u.isAdmin ? 'Yönetici' : 'Kullanıcı'}
                               </span>
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 transition-colors">
                               {new Date(u.createdAt).toLocaleDateString('tr-TR')}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
                                 onClick={() => deleteUser(u.id)}
                                 disabled={u.id === user?.id}
-                                className="text-red-600 hover:text-red-900 disabled:text-gray-400 disabled:cursor-not-allowed"
+                                className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </button>
@@ -228,8 +228,8 @@ const Admin: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                      <h2 className="text-lg font-semibold text-gray-900 mb-2">Reklam Yönetimi</h2>
-                      <p className="text-gray-600">Reklamları oluşturun ve yönetin</p>
+                      <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors">Reklam Yönetimi</h2>
+                      <p className="text-gray-600 dark:text-gray-400 transition-colors">Reklamları oluşturun ve yönetin</p>
                   </div>
                   <button
                     onClick={() => setShowAdForm(true)}
@@ -243,17 +243,17 @@ const Admin: React.FC = () => {
                 {advertisements.length === 0 ? (
                   <div className="text-center py-12">
                     <MessageSquare className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">Reklam yok</h3>
-                    <p className="text-gray-600">Başlamak için ilk reklamınızı oluşturun</p>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2 transition-colors">Reklam yok</h3>
+                    <p className="text-gray-600 dark:text-gray-400 transition-colors">Başlamak için ilk reklamınızı oluşturun</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {advertisements.map((ad) => (
-                      <div key={ad.id} className="border border-gray-200 rounded-lg p-6">
+                      <div key={ad.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-800 transition-colors">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
-                            <h3 className="font-semibold text-gray-900">{ad.title}</h3>
-                            <p className="text-sm text-gray-600 mt-1">{ad.content}</p>
+                            <h3 className="font-semibold text-gray-900 dark:text-white transition-colors">{ad.title}</h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 transition-colors">{ad.content}</p>
                           </div>
                           <div className="flex space-x-2">
                             <button
@@ -261,13 +261,13 @@ const Admin: React.FC = () => {
                                 setEditingAd(ad);
                                 setShowAdForm(true);
                               }}
-                              className="text-gray-600 hover:text-blue-600"
+                              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                             >
                               <Edit className="h-4 w-4" />
                             </button>
                             <button
                               onClick={() => deleteAd(ad.id)}
-                              className="text-gray-600 hover:text-red-600"
+                              className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                             >
                               <Trash2 className="h-4 w-4" />
                             </button>
@@ -276,15 +276,15 @@ const Admin: React.FC = () => {
                         
                         <div className="space-y-2">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-500">Konum:</span>
-                            <span className="font-medium capitalize">{ad.position}</span>
+                            <span className="text-gray-500 dark:text-gray-400 transition-colors">Konum:</span>
+                            <span className="font-medium capitalize text-gray-900 dark:text-white transition-colors">{ad.position}</span>
                           </div>
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-500">Durum:</span>
+                            <span className="text-gray-500 dark:text-gray-400 transition-colors">Durum:</span>
                             <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                               ad.isActive 
-                                ? 'bg-green-100 text-green-800' 
-                                : 'bg-gray-100 text-gray-800'
+                                ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200' 
+                                : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300'
                             }`}>
                               {ad.isActive ? 'Aktif' : 'Pasif'}
                             </span>
@@ -301,10 +301,10 @@ const Admin: React.FC = () => {
 
         {/* Ad Form Modal */}
         {showAdForm && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-2xl shadow-xl max-w-md w-full">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-xl font-semibold text-gray-900">
+          <div className="fixed inset-0 bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-70 flex items-center justify-center p-4 z-50 transition-colors">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl max-w-md w-full transition-colors">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700 transition-colors">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors">
                   {editingAd ? 'Reklamı Düzenle' : 'Reklam Oluştur'}
                 </h2>
               </div>
@@ -325,39 +325,39 @@ const Admin: React.FC = () => {
                 className="p-6 space-y-4"
               >
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                     Başlık
                   </label>
                   <input
                     type="text"
                     name="title"
                     defaultValue={editingAd?.title}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                     İçerik
                   </label>
                   <textarea
                     name="content"
                     defaultValue={editingAd?.content}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
                     rows={3}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                     Konum
                   </label>
                   <select
                     name="position"
                     defaultValue={editingAd?.position}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
                   >
                     <option value="header">Üst Kısım</option>
                     <option value="sidebar">Yan Panel</option>
@@ -366,26 +366,26 @@ const Admin: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                     Resim URL (isteğe bağlı)
                   </label>
                   <input
                     type="url"
                     name="imageUrl"
                     defaultValue={editingAd?.imageUrl}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                     Hedef URL (isteğe bağlı)
                   </label>
                   <input
                     type="url"
                     name="targetUrl"
                     defaultValue={editingAd?.targetUrl}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
                   />
                 </div>
 
@@ -395,9 +395,9 @@ const Admin: React.FC = () => {
                     id="isActive"
                     name="isActive"
                     defaultChecked={editingAd?.isActive ?? true}
-                    className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700 transition-colors"
                   />
-                  <label htmlFor="isActive" className="text-sm text-gray-700">
+                  <label htmlFor="isActive" className="text-sm text-gray-700 dark:text-gray-300 transition-colors">
                     Aktif
                   </label>
                 </div>
@@ -409,7 +409,7 @@ const Admin: React.FC = () => {
                       setShowAdForm(false);
                       setEditingAd(undefined);
                     }}
-                    className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                   >
                     İptal
                   </button>

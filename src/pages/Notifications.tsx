@@ -57,13 +57,13 @@ const Notifications: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 lg:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 lg:p-8 transition-colors">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
           <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Henüz bildirim yok</h3>
-            <p className="text-gray-600">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 transition-colors">Bildirimler</h1>
+            <p className="text-gray-600 dark:text-gray-400 transition-colors">
               İlaçlarınız ve önemli güncellemeler hakkında sizi burada bilgilendireceğiz.
             </p>
           </div>
@@ -81,7 +81,7 @@ const Notifications: React.FC = () => {
         </div>
 
         {/* Notifications List */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 transition-colors">
           {loading ? (
             <div className="p-8 text-center">
               <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
@@ -89,20 +89,20 @@ const Notifications: React.FC = () => {
           ) : notifications.length === 0 ? (
             <div className="p-12 text-center">
               <Bell className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No notifications yet</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">Henüz bildirim yok</h3>
+              <p className="text-gray-600 dark:text-gray-400 transition-colors">
                 We'll notify you about your medications and important updates here.
               </p>
             </div>
           ) : (
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-gray-200 dark:divide-gray-700">
               {notifications.map((notification) => (
                 <div 
                   key={notification.id} 
                   className={`p-6 transition-all ${
                     notification.isRead 
-                      ? 'bg-white' 
-                      : 'bg-blue-50 border-l-4 border-l-blue-500'
+                      ? 'bg-white dark:bg-gray-800' 
+                      : 'bg-blue-50 dark:bg-blue-900/20 border-l-4 border-l-blue-500'
                   }`}
                 >
                   <div className="flex items-start space-x-4">
@@ -115,8 +115,8 @@ const Notifications: React.FC = () => {
                         <div className="flex-1">
                           <h3 className={`text-lg font-semibold ${
                             notification.isRead ? 'text-gray-700' : 'text-gray-900'
-                          }`}>
-                            {notification.title}
+                              ? 'text-gray-700 dark:text-gray-300' 
+                              : 'text-gray-900 dark:text-white'
                           </h3>
                           <p className={`mt-1 ${
                             notification.isRead ? 'text-gray-500' : 'text-gray-700'
@@ -125,14 +125,14 @@ const Notifications: React.FC = () => {
                           </p>
                           <p className="mt-2 text-sm text-gray-400">
                             {formatDate(notification.createdAt)}
-                          </p>
-                        </div>
+                              ? 'text-gray-500 dark:text-gray-400' 
+                              : 'text-gray-700 dark:text-gray-300'
                         
                         <div className="flex items-center space-x-2 ml-4">
                           {!notification.isRead && (
                             <button
                               onClick={() => handleMarkAsRead(notification.id)}
-                              className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                              className="p-2 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/50 rounded-lg transition-colors"
                               title="Okundu olarak işaretle"
                             >
                               <Check className="h-4 w-4" />
@@ -140,8 +140,8 @@ const Notifications: React.FC = () => {
                           )}
                           
                           {notification.isRead && (
-                            <div className="p-2 text-green-600" title="Okundu">
-                              <Check className="h-4 w-4" />
+                            <div className="p-2 text-green-600 dark:text-green-400" title="Okundu">
+                          <p className="mt-2 text-sm text-gray-400 dark:text-gray-500 transition-colors">
                             </div>
                           )}
                         </div>

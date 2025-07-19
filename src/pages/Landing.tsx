@@ -4,22 +4,22 @@ import { Pill, Bell, Shield, Clock, CheckCircle, Users } from 'lucide-react';
 
 const Landing: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+      <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="p-2 bg-blue-600 rounded-lg">
                 <Pill className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">İlaç Hatırlatıcısı</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white transition-colors">İlaç Hatırlatıcısı</span>
             </div>
             
             <div className="flex items-center space-x-4">
               <Link 
                 to="/login"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
               >
                 Giriş Yap
               </Link>
@@ -39,11 +39,11 @@ const Landing: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-colors">
                 <span className="text-blue-600">İlaçlarınızı</span> Bir Daha
                 Asla Unutmayın
               </h1>
-              <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+              <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                 Akıllı ilaç hatırlatma sistemimizle sağlığınızın kontrolünü elinize alın. 
                 Günlük ilaçlarınızı takip edin, yönetin ve kişiselleştirilmiş bildirimlerle asla unutmayın.
               </p>
@@ -101,13 +101,13 @@ const Landing: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">
               Sağlıklı Kalmak İçin İhtiyacınız Olan Her Şey
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors">
               Kapsamlı ilaç yönetim sistemimiz, akıllı hatırlatmalar ve detaylı takip ile 
               tedavi planınıza mükemmel uyum sağlamanıza yardımcı olur.
             </p>
@@ -115,33 +115,33 @@ const Landing: React.FC = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
+              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
                 <Pill className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Akıllı İlaç Takibi</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors">Akıllı İlaç Takibi</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                 Tüm ilaçlarınızı detaylı zamanlama, doz bilgileri ve rutininize uygun 
                 kişiselleştirilmiş hatırlatmalarla kolayca ekleyin ve yönetin.
               </p>
             </div>
             
             <div className="text-center group">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
+              <div className="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 dark:group-hover:bg-purple-800 transition-colors">
                 <Bell className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Akıllı Hatırlatmalar</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors">Akıllı Hatırlatmalar</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                 Programınıza uyum sağlayan ve tüm cihazlarınızda zamanında hatırlatmalar 
                 gönderen akıllı bildirim sistemimizle hiçbir dozu kaçırmayın.
               </p>
             </div>
             
             <div className="text-center group">
-              <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition-colors">
+              <div className="bg-teal-100 dark:bg-teal-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 dark:group-hover:bg-teal-800 transition-colors">
                 <Shield className="h-8 w-8 text-teal-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Güvenli ve Özel</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors">Güvenli ve Özel</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                 Sağlık verileriniz kurumsal düzeyde güvenlikle korunur. 
                 Kişisel bilgilerinizi asla üçüncü taraflarla paylaşmayız.
               </p>
@@ -171,12 +171,12 @@ const Landing: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 dark:bg-gray-950 transition-colors">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white dark:text-gray-100 mb-6 transition-colors">
             Sağlığınızın Kontrolünü Almaya Hazır mısınız?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 dark:text-gray-400 mb-8 transition-colors">
             İlaçlarını takip etmek için İlaç Hatırlatıcısı'na güvenen binlerce kullanıcıya katılın.
           </p>
           <Link 
@@ -189,16 +189,16 @@ const Landing: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200">
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="p-2 bg-blue-600 rounded-lg">
                 <Pill className="h-5 w-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-gray-900">İlaç Hatırlatıcısı</span>
+              <span className="text-lg font-bold text-gray-900 dark:text-white transition-colors">İlaç Hatırlatıcısı</span>
             </div>
-            <p className="text-gray-600">© 2025 İlaç Hatırlatıcısı. Tüm hakları saklıdır.</p>
+            <p className="text-gray-600 dark:text-gray-400 transition-colors">© 2025 İlaç Hatırlatıcısı. Tüm hakları saklıdır.</p>
           </div>
         </div>
       </footer>
