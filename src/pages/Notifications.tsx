@@ -140,7 +140,6 @@ const Notifications: React.FC = () => {
                           )}
                           
                           {notification.isRead && (
-                            <div className="p-2 text-green-600" title="Read">
                             <div className="p-2 text-green-600" title="Okundu">
                               <Check className="h-4 w-4" />
                             </div>
