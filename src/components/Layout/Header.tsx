@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <div className="p-2 bg-blue-600 rounded-lg">
               <Pill className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">MediReminder</span>
+            <span className="text-xl font-bold text-gray-900">İlaç Hatırlatıcısı</span>
           </Link>
 
           {/* Navigation */}
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
               <span>Notifications</span>
               {unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount > 9 ? '9+' : unreadCount}
+                  <span>Yönetici</span>
                 </span>
               )}
             </Link>
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                 }`}
               >
                 <Settings className="h-4 w-4" />
-                <span>Admin</span>
+                <span>Bildirimler</span>
               </Link>
             )}
           </nav>
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                     className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                   >
                     <Settings className="h-4 w-4" />
-                    <span>Profile</span>
+                    <span>Profil</span>
                   </Link>
                   {user.isAdmin && (
                     <Link 
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                       className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
                       <Settings className="h-4 w-4" />
-                      <span>Admin Panel</span>
+                      <span>Yönetici Paneli</span>
                     </Link>
                   )}
                   <button 
@@ -123,7 +123,7 @@ const Header: React.FC = () => {
                     className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                   >
                     <LogOut className="h-4 w-4" />
-                    <span>Logout</span>
+                    <span>Çıkış Yap</span>
                   </button>
                 </div>
               </div>

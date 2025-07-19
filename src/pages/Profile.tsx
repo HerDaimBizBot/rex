@@ -75,8 +75,8 @@ const Profile: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Profile Settings</h1>
-          <p className="text-gray-600">Manage your account preferences and settings</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Profil Ayarları</h1>
+          <p className="text-gray-600">Hesap tercihlerinizi ve ayarlarınızı yönetin</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -87,16 +87,16 @@ const Profile: React.FC = () => {
                 <User className="h-10 w-10 text-white" />
               </div>
               <h2 className="text-xl font-semibold text-gray-900 mb-1">{user.username}</h2>
-              <p className="text-gray-600 mb-4">{user.email || 'No email set'}</p>
+              <p className="text-gray-600 mb-4">{user.email || 'E-posta ayarlanmadı'}</p>
               
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
-                  Member since {new Date(user.createdAt).toLocaleDateString()}
+                  Üyelik tarihi {new Date(user.createdAt).toLocaleDateString('tr-TR')}
                 </div>
                 
                 {user.isAdmin && (
                   <div className="inline-flex items-center px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">
-                    Admin
+                    Yönetici
                   </div>
                 )}
               </div>
@@ -109,20 +109,20 @@ const Profile: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Profile Information</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Profil Bilgileri</h3>
                   {!isEditing ? (
                     <button
                       onClick={() => setIsEditing(true)}
                       className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
                     >
-                      Edit
+                      Düzenle
                     </button>
                   ) : (
                     <button
                       onClick={() => setIsEditing(false)}
                       className="text-gray-600 hover:text-gray-700 font-medium text-sm transition-colors"
                     >
-                      Cancel
+                      İptal
                     </button>
                   )}
                 </div>
@@ -133,7 +133,7 @@ const Profile: React.FC = () => {
                   <form onSubmit={handleProfileUpdate} className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Username
+                        Kullanıcı Adı
                       </label>
                       <input
                         type="text"
@@ -145,14 +145,14 @@ const Profile: React.FC = () => {
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email
+                        E-posta
                       </label>
                       <input
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Enter your email"
+                        placeholder="E-posta adresinizi girin"
                       />
                     </div>
                     
@@ -161,23 +161,23 @@ const Profile: React.FC = () => {
                       className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
                     >
                       <Save className="h-4 w-4" />
-                      <span>Save Changes</span>
+                      <span>Değişiklikleri Kaydet</span>
                     </button>
                   </form>
                 ) : (
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Username
+                        Kullanıcı Adı
                       </label>
                       <p className="text-gray-900">{user.username}</p>
                     </div>
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Email
+                        E-posta
                       </label>
-                      <p className="text-gray-900">{user.email || 'Not set'}</p>
+                      <p className="text-gray-900">{user.email || 'Ayarlanmadı'}</p>
                     </div>
                   </div>
                 )}
@@ -187,14 +187,14 @@ const Profile: React.FC = () => {
             {/* Theme Settings */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200">
               <div className="p-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Appearance</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Görünüm</h3>
               </div>
               
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-medium text-gray-900">Theme</h4>
-                    <p className="text-sm text-gray-600">Choose your preferred theme</p>
+                    <h4 className="font-medium text-gray-900">Tema</h4>
+                    <p className="text-sm text-gray-600">Tercih ettiğiniz temayı seçin</p>
                   </div>
                   
                   <button
@@ -215,11 +215,11 @@ const Profile: React.FC = () => {
                 <div className="mt-4 flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
                     <Sun className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Light</span>
+                    <span className="text-sm text-gray-600">Açık</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Moon className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">Dark</span>
+                    <span className="text-sm text-gray-600">Koyu</span>
                   </div>
                 </div>
               </div>
@@ -229,13 +229,13 @@ const Profile: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">Security</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Güvenlik</h3>
                   {!showPasswordForm && (
                     <button
                       onClick={() => setShowPasswordForm(true)}
                       className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
                     >
-                      Change Password
+                      Şifre Değiştir
                     </button>
                   )}
                 </div>
@@ -246,7 +246,7 @@ const Profile: React.FC = () => {
                   <form onSubmit={handlePasswordChange} className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Current Password
+                        Mevcut Şifre
                       </label>
                       <div className="relative">
                         <input
@@ -268,7 +268,7 @@ const Profile: React.FC = () => {
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        New Password
+                        Yeni Şifre
                       </label>
                       <div className="relative">
                         <input
@@ -290,7 +290,7 @@ const Profile: React.FC = () => {
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Confirm New Password
+                        Yeni Şifre Tekrarı
                       </label>
                       <input
                         type="password"
@@ -314,21 +314,21 @@ const Profile: React.FC = () => {
                         }}
                         className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        Cancel
+                        İptal
                       </button>
                       <button
                         type="submit"
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
                       >
                         <Save className="h-4 w-4" />
-                        <span>Update Password</span>
+                        <span>Şifreyi Güncelle</span>
                       </button>
                     </div>
                   </form>
                 ) : (
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-1">Password</h4>
-                    <p className="text-sm text-gray-600">Last updated: Never</p>
+                    <h4 className="font-medium text-gray-900 mb-1">Şifre</h4>
+                    <p className="text-sm text-gray-600">Son güncelleme: Hiç</p>
                   </div>
                 )}
               </div>

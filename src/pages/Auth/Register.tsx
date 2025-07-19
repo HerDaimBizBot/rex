@@ -54,8 +54,8 @@ const Register: React.FC = () => {
               <Pill className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-          <p className="text-gray-600 mt-2">Start your health journey with MediReminder</p>
+          <h1 className="text-2xl font-bold text-gray-900">Hesap Oluştur</h1>
+          <p className="text-gray-600 mt-2">İlaç Hatırlatıcısı ile sağlık yolculuğunuza başlayın</p>
         </div>
 
         {/* Register Form */}
@@ -64,14 +64,14 @@ const Register: React.FC = () => {
             {from === '/admin' && (
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-4">
                 <p className="text-sm text-purple-800">
-                  <strong>Admin Account:</strong> Use username "admin" to create an admin account with full access.
+                  <strong>Yönetici Hesabı:</strong> Tam erişimli yönetici hesabı oluşturmak için "admin" kullanıcı adını kullanın.
                 </p>
               </div>
             )}
             
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
-                Username
+                Kullanıcı Adı
               </label>
               <input
                 type="text"
@@ -79,14 +79,14 @@ const Register: React.FC = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="Choose a username"
+                placeholder="Bir kullanıcı adı seçin"
                 disabled={isLoading}
               />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+                Şifre
               </label>
               <div className="relative">
                 <input
@@ -95,7 +95,7 @@ const Register: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-12"
-                  placeholder="Enter your password"
+                  placeholder="Şifrenizi girin"
                   disabled={isLoading}
                 />
                 <button
@@ -111,7 +111,7 @@ const Register: React.FC = () => {
 
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                Confirm Password
+                Şifre Tekrarı
               </label>
               <div className="relative">
                 <input
@@ -120,7 +120,7 @@ const Register: React.FC = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-12"
-                  placeholder="Confirm your password"
+                  placeholder="Şifrenizi tekrar girin"
                   disabled={isLoading}
                 />
                 <button
@@ -144,7 +144,7 @@ const Register: React.FC = () => {
               ) : (
                 <>
                   <UserPlus className="h-5 w-5" />
-                  <span>Create Account</span>
+                  <span>Hesap Oluştur</span>
                 </>
               )}
             </button>
@@ -152,12 +152,12 @@ const Register: React.FC = () => {
 
           <div className="mt-6 text-center">
             <p className="text-gray-600">
-              Already have an account?{' '}
+              Zaten hesabınız var mı?{' '}
               <Link 
                 to="/login" 
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
               >
-                Sign in here
+                Buradan giriş yapın
               </Link>
             </p>
           </div>
@@ -169,7 +169,7 @@ const Register: React.FC = () => {
             to="/" 
             className="text-gray-600 hover:text-gray-800 transition-colors"
           >
-            ← Back to home
+            ← Ana sayfaya dön
           </Link>
         </div>
       </div>

@@ -95,8 +95,8 @@ const Admin: React.FC = () => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <Shield className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h2>
-          <p className="text-gray-600">You don't have permission to access this page.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Erişim Reddedildi</h2>
+          <p className="text-gray-600">Bu sayfaya erişim izniniz yok.</p>
         </div>
       </div>
     );
@@ -107,8 +107,8 @@ const Admin: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Panel</h1>
-          <p className="text-gray-600">Manage users and advertisements</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Yönetici Paneli</h1>
+          <p className="text-gray-600">Kullanıcıları ve reklamları yönetin</p>
         </div>
 
         {/* Tabs */}
@@ -125,7 +125,7 @@ const Admin: React.FC = () => {
               >
                 <div className="flex items-center space-x-2">
                   <Users className="h-4 w-4" />
-                  <span>Users ({users.length})</span>
+                  <span>Kullanıcılar ({users.length})</span>
                 </div>
               </button>
               
@@ -139,7 +139,7 @@ const Admin: React.FC = () => {
               >
                 <div className="flex items-center space-x-2">
                   <MessageSquare className="h-4 w-4" />
-                  <span>Advertisements ({advertisements.length})</span>
+                  <span>Reklamlar ({advertisements.length})</span>
                 </div>
               </button>
             </nav>
@@ -149,14 +149,14 @@ const Admin: React.FC = () => {
             {activeTab === 'users' ? (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-lg font-semibold text-gray-900 mb-2">User Management</h2>
-                  <p className="text-gray-600">View and manage registered users</p>
+                    <h2 className="text-lg font-semibold text-gray-900 mb-2">Kullanıcı Yönetimi</h2>
+                    <p className="text-gray-600">Kayıtlı kullanıcıları görüntüleyin ve yönetin</p>
                 </div>
 
                 {users.length === 0 ? (
                   <div className="text-center py-12">
                     <Users className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">No users found</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Kullanıcı bulunamadı</h3>
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
@@ -164,19 +164,19 @@ const Admin: React.FC = () => {
                       <thead className="bg-gray-50">
                         <tr>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            User
+                            Kullanıcı
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Email
+                            E-posta
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Role
+                            Rol
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Created
+                            Oluşturulma
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Actions
+                            İşlemler
                           </th>
                         </tr>
                       </thead>
@@ -194,7 +194,7 @@ const Admin: React.FC = () => {
                               </div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                              {u.email || 'Not set'}
+                              {u.email || 'Ayarlanmadı'}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
@@ -202,11 +202,11 @@ const Admin: React.FC = () => {
                                   ? 'bg-purple-100 text-purple-800' 
                                   : 'bg-gray-100 text-gray-800'
                               }`}>
-                                {u.isAdmin ? 'Admin' : 'User'}
+                                {u.isAdmin ? 'Yönetici' : 'Kullanıcı'}
                               </span>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {new Date(u.createdAt).toLocaleDateString()}
+                              {new Date(u.createdAt).toLocaleDateString('tr-TR')}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                               <button
@@ -228,23 +228,23 @@ const Admin: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-900 mb-2">Advertisement Management</h2>
-                    <p className="text-gray-600">Create and manage advertisements</p>
+                      <h2 className="text-lg font-semibold text-gray-900 mb-2">Reklam Yönetimi</h2>
+                      <p className="text-gray-600">Reklamları oluşturun ve yönetin</p>
                   </div>
                   <button
                     onClick={() => setShowAdForm(true)}
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
                   >
                     <Plus className="h-4 w-4" />
-                    <span>Add Advertisement</span>
+                      <span>Reklam Ekle</span>
                   </button>
                 </div>
 
                 {advertisements.length === 0 ? (
                   <div className="text-center py-12">
                     <MessageSquare className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">No advertisements</h3>
-                    <p className="text-gray-600">Create your first advertisement to get started</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Reklam yok</h3>
+                    <p className="text-gray-600">Başlamak için ilk reklamınızı oluşturun</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -276,17 +276,17 @@ const Admin: React.FC = () => {
                         
                         <div className="space-y-2">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-500">Position:</span>
+                            <span className="text-gray-500">Konum:</span>
                             <span className="font-medium capitalize">{ad.position}</span>
                           </div>
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-500">Status:</span>
+                            <span className="text-gray-500">Durum:</span>
                             <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                               ad.isActive 
                                 ? 'bg-green-100 text-green-800' 
                                 : 'bg-gray-100 text-gray-800'
                             }`}>
-                              {ad.isActive ? 'Active' : 'Inactive'}
+                              {ad.isActive ? 'Aktif' : 'Pasif'}
                             </span>
                           </div>
                         </div>
@@ -305,7 +305,7 @@ const Admin: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-xl max-w-md w-full">
               <div className="p-6 border-b border-gray-200">
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {editingAd ? 'Edit Advertisement' : 'Create Advertisement'}
+                  {editingAd ? 'Reklamı Düzenle' : 'Reklam Oluştur'}
                 </h2>
               </div>
               
@@ -326,7 +326,7 @@ const Admin: React.FC = () => {
               >
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Title
+                    Başlık
                   </label>
                   <input
                     type="text"
@@ -339,7 +339,7 @@ const Admin: React.FC = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Content
+                    İçerik
                   </label>
                   <textarea
                     name="content"
@@ -352,22 +352,22 @@ const Admin: React.FC = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Position
+                    Konum
                   </label>
                   <select
                     name="position"
                     defaultValue={editingAd?.position}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
-                    <option value="header">Header</option>
-                    <option value="sidebar">Sidebar</option>
-                    <option value="footer">Footer</option>
+                    <option value="header">Üst Kısım</option>
+                    <option value="sidebar">Yan Panel</option>
+                    <option value="footer">Alt Kısım</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Image URL (optional)
+                    Resim URL (isteğe bağlı)
                   </label>
                   <input
                     type="url"
@@ -379,7 +379,7 @@ const Admin: React.FC = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Target URL (optional)
+                    Hedef URL (isteğe bağlı)
                   </label>
                   <input
                     type="url"
@@ -398,7 +398,7 @@ const Admin: React.FC = () => {
                     className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                   />
                   <label htmlFor="isActive" className="text-sm text-gray-700">
-                    Active
+                    Aktif
                   </label>
                 </div>
 
@@ -411,13 +411,13 @@ const Admin: React.FC = () => {
                     }}
                     className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
                   >
-                    Cancel
+                    İptal
                   </button>
                   <button
                     type="submit"
                     className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    {editingAd ? 'Update' : 'Create'}
+                    {editingAd ? 'Güncelle' : 'Oluştur'}
                   </button>
                 </div>
               </form>

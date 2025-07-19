@@ -13,7 +13,7 @@ const Landing: React.FC = () => {
               <div className="p-2 bg-blue-600 rounded-lg">
                 <Pill className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">MediReminder</span>
+              <span className="text-xl font-bold text-gray-900">İlaç Hatırlatıcısı</span>
             </div>
             
             <div className="flex items-center space-x-4">
@@ -21,13 +21,13 @@ const Landing: React.FC = () => {
                 to="/login"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
               >
-                Login
+                Giriş Yap
               </Link>
               <Link 
                 to="/register"
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
               >
-                Get Started
+                Başla
               </Link>
             </div>
           </div>
@@ -40,25 +40,25 @@ const Landing: React.FC = () => {
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Never Miss Your 
-                <span className="text-blue-600"> Medication</span> Again
+                <span className="text-blue-600">İlaçlarınızı</span> Bir Daha
+                Asla Unutmayın
               </h1>
               <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-                Take control of your health with our intelligent medication reminder system. 
-                Track, manage, and never forget your daily medications with personalized notifications.
+                Akıllı ilaç hatırlatma sistemimizle sağlığınızın kontrolünü elinize alın. 
+                Günlük ilaçlarınızı takip edin, yönetin ve kişiselleştirilmiş bildirimlerle asla unutmayın.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/register"
                   className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-center hover:shadow-lg transform hover:-translate-y-0.5"
                 >
-                  Start Free Today
+                  Ücretsiz Başla
                 </Link>
                 <Link 
                   to="/login"
                   className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 font-semibold text-center"
                 >
-                  Sign In
+                  Giriş Yap
                 </Link>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Landing: React.FC = () => {
                         </div>
                         <div>
                           <p className="text-white font-semibold">Aspirin 100mg</p>
-                          <p className="text-white/80 text-sm">Take at 9:00 AM</p>
+                          <p className="text-white/80 text-sm">Saat 09:00'da alın</p>
                         </div>
                         <CheckCircle className="h-6 w-6 text-green-400 ml-auto" />
                       </div>
@@ -86,8 +86,8 @@ const Landing: React.FC = () => {
                           <Bell className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                          <p className="text-white font-semibold">Vitamin D</p>
-                          <p className="text-white/80 text-sm">Due in 2 hours</p>
+                          <p className="text-white font-semibold">D Vitamini</p>
+                          <p className="text-white/80 text-sm">2 saat sonra</p>
                         </div>
                         <Clock className="h-6 w-6 text-yellow-400 ml-auto" />
                       </div>
@@ -105,11 +105,11 @@ const Landing: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need to Stay Healthy
+              Sağlıklı Kalmak İçin İhtiyacınız Olan Her Şey
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our comprehensive medication management system helps you maintain perfect adherence 
-              to your treatment plan with intelligent reminders and detailed tracking.
+              Kapsamlı ilaç yönetim sistemimiz, akıllı hatırlatmalar ve detaylı takip ile 
+              tedavi planınıza mükemmel uyum sağlamanıza yardımcı olur.
             </p>
           </div>
           
@@ -118,10 +118,10 @@ const Landing: React.FC = () => {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
                 <Pill className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Smart Medication Tracking</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Akıllı İlaç Takibi</h3>
               <p className="text-gray-600 leading-relaxed">
-                Easily add and manage all your medications with detailed scheduling, 
-                dosage information, and personalized reminders tailored to your routine.
+                Tüm ilaçlarınızı detaylı zamanlama, doz bilgileri ve rutininize uygun 
+                kişiselleştirilmiş hatırlatmalarla kolayca ekleyin ve yönetin.
               </p>
             </div>
             
@@ -129,10 +129,10 @@ const Landing: React.FC = () => {
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
                 <Bell className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Intelligent Reminders</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Akıllı Hatırlatmalar</h3>
               <p className="text-gray-600 leading-relaxed">
-                Never miss a dose with our smart notification system that adapts to your 
-                schedule and sends timely reminders across all your devices.
+                Programınıza uyum sağlayan ve tüm cihazlarınızda zamanında hatırlatmalar 
+                gönderen akıllı bildirim sistemimizle hiçbir dozu kaçırmayın.
               </p>
             </div>
             
@@ -140,10 +140,10 @@ const Landing: React.FC = () => {
               <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-200 transition-colors">
                 <Shield className="h-8 w-8 text-teal-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure & Private</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Güvenli ve Özel</h3>
               <p className="text-gray-600 leading-relaxed">
-                Your health data is protected with enterprise-grade security. 
-                We never share your personal information with third parties.
+                Sağlık verileriniz kurumsal düzeyde güvenlikle korunur. 
+                Kişisel bilgilerinizi asla üçüncü taraflarla paylaşmayız.
               </p>
             </div>
           </div>
@@ -156,15 +156,15 @@ const Landing: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-white mb-2">98%</div>
-              <div className="text-blue-100">Medication Adherence Rate</div>
+              <div className="text-blue-100">İlaç Uyum Oranı</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">50K+</div>
-              <div className="text-blue-100">Active Users</div>
+              <div className="text-blue-100">Aktif Kullanıcı</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">1M+</div>
-              <div className="text-blue-100">Reminders Sent</div>
+              <div className="text-blue-100">Gönderilen Hatırlatma</div>
             </div>
           </div>
         </div>
@@ -174,16 +174,16 @@ const Landing: React.FC = () => {
       <section className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Take Control of Your Health?
+            Sağlığınızın Kontrolünü Almaya Hazır mısınız?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of users who trust MediReminder to keep them on track with their medications.
+            İlaçlarını takip etmek için İlaç Hatırlatıcısı'na güvenen binlerce kullanıcıya katılın.
           </p>
           <Link 
             to="/register"
             className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold inline-block hover:shadow-lg transform hover:-translate-y-0.5"
           >
-            Get Started - It's Free
+            Başlayın - Ücretsiz
           </Link>
         </div>
       </section>
@@ -196,9 +196,9 @@ const Landing: React.FC = () => {
               <div className="p-2 bg-blue-600 rounded-lg">
                 <Pill className="h-5 w-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-gray-900">MediReminder</span>
+              <span className="text-lg font-bold text-gray-900">İlaç Hatırlatıcısı</span>
             </div>
-            <p className="text-gray-600">© 2025 MediReminder. All rights reserved.</p>
+            <p className="text-gray-600">© 2025 İlaç Hatırlatıcısı. Tüm hakları saklıdır.</p>
           </div>
         </div>
       </footer>

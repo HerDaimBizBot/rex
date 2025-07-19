@@ -56,27 +56,27 @@ const MedicineForm: React.FC<{
       <div className="bg-white rounded-2xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-900">
-            {medicine ? 'Edit Medicine' : 'Add New Medicine'}
+            {medicine ? 'İlacı Düzenle' : 'Yeni İlaç Ekle'}
           </h2>
         </div>
         
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Medicine Name *
+              İlaç Adı *
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="e.g., Aspirin"
+              placeholder="örn., Aspirin"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Dosage *
+              Doz *
             </label>
             <input
               type="text"
@@ -89,23 +89,23 @@ const MedicineForm: React.FC<{
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Frequency
+              Sıklık
             </label>
             <select
               value={formData.frequency}
               onChange={(e) => setFormData(prev => ({ ...prev, frequency: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
-              <option value="as-needed">As Needed</option>
+              <option value="daily">Günlük</option>
+              <option value="weekly">Haftalık</option>
+              <option value="monthly">Aylık</option>
+              <option value="as-needed">Gerektiğinde</option>
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Times *
+              Saatler *
             </label>
             <div className="space-y-2">
               {formData.times.map((time, index) => (
@@ -132,7 +132,7 @@ const MedicineForm: React.FC<{
                 onClick={addTime}
                 className="text-blue-600 hover:text-blue-700 text-sm font-medium"
               >
-                + Add Time
+                + Saat Ekle
               </button>
             </div>
           </div>
@@ -140,7 +140,7 @@ const MedicineForm: React.FC<{
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Start Date *
+                Başlangıç Tarihi *
               </label>
               <input
                 type="date"
@@ -152,7 +152,7 @@ const MedicineForm: React.FC<{
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                End Date
+                Bitiş Tarihi
               </label>
               <input
                 type="date"
@@ -165,7 +165,7 @@ const MedicineForm: React.FC<{
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Color
+              Renk
             </label>
             <div className="flex items-center space-x-3">
               <input
@@ -174,20 +174,20 @@ const MedicineForm: React.FC<{
                 onChange={(e) => setFormData(prev => ({ ...prev, color: e.target.value }))}
                 className="w-12 h-10 border border-gray-300 rounded-lg cursor-pointer"
               />
-              <span className="text-sm text-gray-600">Choose a color to identify this medicine</span>
+              <span className="text-sm text-gray-600">Bu ilacı tanımlamak için bir renk seçin</span>
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Notes
+              Notlar
             </label>
             <textarea
               value={formData.notes}
               onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               rows={3}
-              placeholder="Any additional notes..."
+              placeholder="Ek notlar..."
             />
           </div>
 
@@ -200,7 +200,7 @@ const MedicineForm: React.FC<{
               className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
             />
             <label htmlFor="isActive" className="text-sm text-gray-700">
-              Active
+              Aktif
             </label>
           </div>
 
@@ -210,13 +210,13 @@ const MedicineForm: React.FC<{
               onClick={onCancel}
               className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              Cancel
+              İptal
             </button>
             <button
               type="submit"
               className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
-              {medicine ? 'Update' : 'Add'} Medicine
+              İlacı {medicine ? 'Güncelle' : 'Ekle'}
             </button>
           </div>
         </form>
@@ -271,15 +271,15 @@ const Medicines: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">My Medicines</h1>
-            <p className="text-gray-600">Manage your medication schedule</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">İlaçlarım</h1>
+            <p className="text-gray-600">İlaç programınızı yönetin</p>
           </div>
           <button
             onClick={() => setShowForm(true)}
             className="mt-4 sm:mt-0 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
           >
             <Plus className="h-5 w-5" />
-            <span>Add Medicine</span>
+            <span>İlaç Ekle</span>
           </button>
         </div>
 
@@ -289,7 +289,7 @@ const Medicines: React.FC = () => {
             <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Search medicines..."
+              placeholder="İlaç ara..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -307,12 +307,12 @@ const Medicines: React.FC = () => {
             <div className="p-12 text-center">
               <Pill className="h-16 w-16 text-gray-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {searchTerm ? 'No medicines found' : 'No medicines added yet'}
+                {searchTerm ? 'İlaç bulunamadı' : 'Henüz ilaç eklenmedi'}
               </h3>
               <p className="text-gray-600 mb-6">
                 {searchTerm 
-                  ? 'Try adjusting your search terms' 
-                  : 'Add your first medicine to start tracking your medication schedule'
+                  ? 'Arama terimlerinizi ayarlamayı deneyin' 
+                  : 'İlaç programınızı takip etmeye başlamak için ilk ilacınızı ekleyin'
                 }
               </p>
               {!searchTerm && (
@@ -321,7 +321,7 @@ const Medicines: React.FC = () => {
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 mx-auto"
                 >
                   <Plus className="h-5 w-5" />
-                  <span>Add Medicine</span>
+                  <span>İlaç Ekle</span>
                 </button>
               )}
             </div>
@@ -360,7 +360,7 @@ const Medicines: React.FC = () => {
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-gray-100 text-gray-800'
                       }`}>
-                        {medicine.isActive ? 'Active' : 'Inactive'}
+                        {medicine.isActive ? 'Aktif' : 'Pasif'}
                       </span>
                       
                       <button

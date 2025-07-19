@@ -62,9 +62,9 @@ const Notifications: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Notifications</h1>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Henüz bildirim yok</h3>
             <p className="text-gray-600">
-              {unreadCount > 0 ? `${unreadCount} unread notification${unreadCount > 1 ? 's' : ''}` : 'All caught up!'}
+              İlaçlarınız ve önemli güncellemeler hakkında sizi burada bilgilendireceğiz.
             </p>
           </div>
           
@@ -75,7 +75,7 @@ const Notifications: React.FC = () => {
               className="mt-4 sm:mt-0 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50"
             >
               <CheckCheck className="h-5 w-5" />
-              <span>Mark All Read</span>
+              <span>Tümünü Okundu İşaretle</span>
             </button>
           )}
         </div>
@@ -133,7 +133,7 @@ const Notifications: React.FC = () => {
                             <button
                               onClick={() => handleMarkAsRead(notification.id)}
                               className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                              title="Mark as read"
+                              title="Okundu olarak işaretle"
                             >
                               <Check className="h-4 w-4" />
                             </button>
@@ -141,6 +141,7 @@ const Notifications: React.FC = () => {
                           
                           {notification.isRead && (
                             <div className="p-2 text-green-600" title="Read">
+                            <div className="p-2 text-green-600" title="Okundu">
                               <Check className="h-4 w-4" />
                             </div>
                           )}

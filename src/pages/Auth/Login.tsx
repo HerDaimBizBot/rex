@@ -42,8 +42,8 @@ const Login: React.FC = () => {
               <Pill className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-          <p className="text-gray-600 mt-2">Sign in to your MediReminder account</p>
+          <h1 className="text-2xl font-bold text-gray-900">Tekrar Hoş Geldiniz</h1>
+          <p className="text-gray-600 mt-2">İlaç Hatırlatıcısı hesabınıza giriş yapın</p>
         </div>
 
         {/* Login Form */}
@@ -52,14 +52,14 @@ const Login: React.FC = () => {
             {from === '/admin' && (
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
                 <p className="text-sm text-blue-800">
-                  <strong>Admin Panel Access:</strong> Please login with admin credentials to access the admin panel.
+                  <strong>Yönetici Panel Erişimi:</strong> Yönetici paneline erişmek için lütfen yönetici kimlik bilgileriyle giriş yapın.
                 </p>
               </div>
             )}
             
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
-                Username
+                Kullanıcı Adı
               </label>
               <input
                 type="text"
@@ -67,14 +67,14 @@ const Login: React.FC = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="Enter your username"
+                placeholder="Kullanıcı adınızı girin"
                 disabled={isLoading}
               />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+                Şifre
               </label>
               <div className="relative">
                 <input
@@ -83,7 +83,7 @@ const Login: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-12"
-                  placeholder="Enter your password"
+                  placeholder="Şifrenizi girin"
                   disabled={isLoading}
                 />
                 <button
@@ -107,7 +107,7 @@ const Login: React.FC = () => {
               ) : (
                 <>
                   <LogIn className="h-5 w-5" />
-                  <span>Sign In</span>
+                  <span>Giriş Yap</span>
                 </>
               )}
             </button>
@@ -115,12 +115,12 @@ const Login: React.FC = () => {
 
           <div className="mt-6 text-center">
             <p className="text-gray-600">
-              Don't have an account?{' '}
+              Hesabınız yok mu?{' '}
               <Link 
                 to="/register" 
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
               >
-                Create one here
+                Buradan oluşturun
               </Link>
             </p>
           </div>
@@ -132,7 +132,7 @@ const Login: React.FC = () => {
             to="/" 
             className="text-gray-600 hover:text-gray-800 transition-colors"
           >
-            ← Back to home
+            ← Ana sayfaya dön
           </Link>
         </div>
       </div>
